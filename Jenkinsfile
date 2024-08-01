@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Push Docker Hub') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url:'') 
+                withDockerRegistry(credentialsId: 'push dockerhub', url:'') 
                 {
                     sh label: '', script: 'docker build -t hoangte/t3h-repository .'
                     sh label: '', script: 'docker push hoangte/t3h-repository'
