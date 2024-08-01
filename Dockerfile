@@ -1,7 +1,7 @@
-FROM node:22
-WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["node", "server.js"]
+FROM ubuntu
+RUN apt update && apt install openssh-server sudo -y
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 admin
+RUN echo 'admin:admin' | chpasswd
+RUN service ssh start
+EXPOSE 22
+CMD ["/usr/sbin/sshd","-D"]
