@@ -16,9 +16,9 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            mail bcc: '', body: 'nội dung ', cc: '', from: '', replyTo: '', subject: 'test jenkin', to: 'boy394462@gmail.com'
-        }
-    }
+    // post {
+    //     always {
+    //         mail bcc: '', body: 'nội dung ', cc: '', from: '', replyTo: '', subject: 'test jenkin', to: 'boy394462@gmail.com'
+    //     }
+    // }
 }
